@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link
+      href="login.css"
+      rel="stylesheet"
+	   href="Signup.html"
+	   rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <h4>It's free and only takes a minute</h4>
+      <form method="post" onsubmit='return validate()'>
+        <label>First Name</label>
+        <input type="text" name="fname" placeholder="" />
+        <label>Last Name</label>
+        <input type="text" name="lname" placeholder="" />
+        <label>Email</label>
+        <input type="email" name="eid" placeholder="" />
+        <label>Password</label>
+        <input type="password" name="pass" placeholder="" />
+        <label>Confirm Password</label>
+        <input type="password" name="pass" placeholder="" />
+        <button type="submit">
+          <a href="index.html">
+            SignUp
+          </a>
+        </button>
+      </form>
+      <script>
+          function validate()
+          {
+            fname=document.forms[0].elements[0].value;
+            fnamep=/^[a-zA-Z]{2,}$/
+            lname=document.forms[0].elements[1].value;
+            lnamep=/^[a-zA-Z]*$/
+            mail=document.forms[0].elements[2].value;
+				    eid=/^\w+@[A-Za-z_]+?\.[a-zA-Z]{2,3}$/
+            pass=document.forms[0].elements[3].value;
+				    cpass=document.forms[0].elements[4].value;
+				    passp=/^(?=.*[0-9])(?=.*[A-Z])(?=.*\w)(?=.*[a-z]).{8,16}$/
+            
+            if(fname.test(fname)==false)
+            {
+              alert("Invalid first name");
+              return false;
+            }
+            else if(!lnamep.test(lname))
+            {
+              alert("Invalid last name");
+              return false;
+            }
+            else if(!ep.test(mail))
+            {
+              alert("Invalid email");
+              return false;
+            } 
+            else if(!passp.test(pass))
+            {
+              alert("Invalid password");
+              return false;
+            } 
+            else if(pass!=cpass)
+            {
+              alert("Something is wrong with password!!!");
+              return false;
+            }
+            else
+            return true;
+          }
+      </script>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="Login.html">LogIn</a>
+    </p>
+  </body>
+</html>
+
